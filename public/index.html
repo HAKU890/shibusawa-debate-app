@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>渋沢杯AIディベート</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>渋沢栄一杯 AIディベート観戦アプリ</h1>
+    <p class="sub">論題を入力すると、AIが肯定側・否定側に分かれて渋沢杯ルールに沿って自動でディベートします。</p>
+  </header>
+
+  <section id="setup">
+    <input id="topic" type="text" placeholder="論題を入力（例：日本は労働者派遣を全面禁止すべきである。是か非か）" />
+    <label id="fileLabel" for="openingFile">肯定側 立論ファイル（PDF/TXT、複数選択可）</label>
+    <input id="openingFile" type="file" accept=".pdf,.txt" multiple />
+    <div id="uploadStatus" class="sub"></div>
+    <button id="startBtn" disabled>ディベート開始</button>
+  </section>
+
+  <section id="progress" class="hidden">
+    <div id="phaseLabel">―</div>
+    <div id="timerWrap"><div id="timerBar"></div></div>
+  </section>
+
+  <main id="transcript"></main>
+
+  <section id="judgment" class="hidden"></section>
+
+  <script src="app.js"></script>
+</body>
+</html>
